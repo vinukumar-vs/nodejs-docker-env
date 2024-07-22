@@ -1,9 +1,13 @@
 const dotenv = require('dotenv')
 
-if(process.env.NODE_ENV === 'production')
-    dotenv.config({ path: '.env' });
-else 
-    dotenv.config({ path: '.env.development' })
+console.log("NODE_ENV", process.env.NODE_ENV)
+if(process.env.NODE_ENV === 'production') {
+  console.log("Running on prodcution mode");
+  dotenv.config({ path: '.env.production' });
+}
+else {
+  dotenv.config({ path: '.env.development' })
+}
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;

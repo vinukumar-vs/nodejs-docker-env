@@ -14,10 +14,10 @@ RUN npm install --production
 COPY . .
 
 # Remove .env(local file) and then rename .env.production to .env
-RUN rm .env && mv .env.production .env
+# RUN rm .env && mv .env.production .env
 
 # Expose the port the app runs on
 EXPOSE 3000
 
 # Command to run the app
-CMD ["node", "src/index.js"]
+CMD ["npm", "start:prod"]
